@@ -17,10 +17,13 @@ export class App extends Component {
     filter: '',
   };
   componentDidMount() {
-    const contacts = localStorage.getItem("contacts")
-    const parsedContacts = JSON.parse(contacts);
-    if (parsedContacts) {
-      this.setState({ contacts: parsedContacts });
+    const contacts = localStorage.getItem('contacts')
+    // const parsedContacts = JSON.parse(contacts);
+    // if (parsedContacts) {
+    //   this.setState({ contacts: parsedContacts });
+    // }
+    if (contacts) {
+      this.setState({contacts:JSON.parse(contacts)})
     }
   }
   componentDidUpdate(prevProps,prevState) {
